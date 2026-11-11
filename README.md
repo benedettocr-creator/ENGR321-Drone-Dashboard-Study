@@ -2,60 +2,81 @@
 
 ENGR 321 (Human Factors Engineering) study comparing two drone delivery dashboards, **Nimbus Express** and **AeroDash**. Participants fly a simulated delivery route while the dashboard beside the flight view shows three alerts: low battery, wind warning, and a status check. We measure how fast they notice and act on each alert, how well they fly, their heart rate, and their workload (NASA-TLX) and usability (SUS) ratings.
 
-- **Design:** within-subject. Every participant flies once with each dashboard, with order and alert order counterbalanced (see [`data/session_schedule.csv`](data/session_schedule.csv)).
-- **Analysis:** two-tailed paired t-tests (α = 0.05), Nimbus minus AeroDash.
+**📄 [Read the current report → report/REPORT.md](report/REPORT.md)**. It rebuilds itself from the data every time someone uploads.
 
-> **This repository is public.** Only coded participant IDs (P001, P002, …) go here. Never commit names, consent forms, face or screen videos, or raw Apple Health exports. `.gitignore` blocks the common ones, but check `git status` before every commit.
+> **This repository is public.** Only coded participant IDs (P001, P002, …) go here. Never commit names, consent forms, face or screen videos, or Apple Health exports. The upload tool and a pre-commit hook block these, but stay careful.
 
-## What's where
+## How it works
 
-| Folder | Contents |
-| --- | --- |
-| [`simulation/`](simulation/) | `drone_sim.html`, the simulator. One offline file: open it in Chrome. See [`READ_ME_FIRST.txt`](simulation/READ_ME_FIRST.txt). |
-| [`data/raw/`](data/raw/) | The CSVs the simulator downloads, in one folder per participant (`data/raw/P001/`, …). |
-| [`data/heart_rate.csv`](data/heart_rate.csv) | Mean heart rate for each time window, typed in from the Apple Watch. |
-| [`data/session_schedule.csv`](data/session_schedule.csv) | Counterbalancing schedule plus session dates and notes. |
-| [`analysis/`](analysis/) | `Project2_Analysis_Workbook.xlsx` (blank template) and `analyze.py` (the same stats, run from the CSVs). |
-| [`results/`](results/) | Filled workbooks exported from the sim, plus `analyze.py` output. These tables go in the report. |
+```
+Run a session      →  Upload with tools/ingest.py   →  git push  →  GitHub Actions checks the data
+(drone_sim.html)      (checks and files the CSVs)                   and rebuilds report/REPORT.md
+```
+
+Each teammate (or their AI agent) uploads their own participants. Every participant has their own folder, so uploads never collide.
+
+## Set up once
+
+```bash
+git clone https://github.com/benedettocr-creator/ENGR321-Drone-Dashboard-Study.git
+```
+
+```bash
+cd ENGR321-Drone-Dashboard-Study && git config core.hooksPath .githooks
+```
+
+Uploading needs only Python 3. Previewing the report locally also needs `pip install -r requirements.txt`.
 
 ## Running a session
 
-1. Open `simulation/drone_sim.html` in Google Chrome on a laptop or desktop.
-2. Follow the setup screen: enter the participant ID, start the Apple Watch workout, and connect the camera and screen.
-3. Run **Baseline rest → Practice → Trial 1 → Trial 2**. The sim picks the dashboard and alert order from the participant ID.
-4. After each run, the browser downloads `_events.csv`, `_telemetry.csv`, `_summary.csv`, and (after a trial) `_survey.csv`, plus `_screen.webm` and `_face.webm` videos.
-5. Move the **CSV files** into `data/raw/<ParticipantID>/`. Keep the **videos off GitHub** on the password-protected group drive.
-6. From the Apple Watch data, type the participant's mean heart rate for the baseline, the Nimbus flight, and the AeroDash flight into `data/heart_rate.csv`. Use the SYNC times in the events CSV to pick each window.
-7. Fill in the participant's row in `data/session_schedule.csv` (group, date, notes).
+1. Open `simulation/drone_sim.html` in Google Chrome on a laptop or desktop (see [`READ_ME_FIRST.txt`](simulation/READ_ME_FIRST.txt)).
+2. Follow the setup screen: enter the participant ID (**P001 format, never a name**), start the Apple Watch Workout, and connect the camera and screen.
+3. Run **Baseline rest → Practice → Trial 1 → Trial 2**. The sim picks the dashboard and alert order from the participant ID ([`data/session_schedule.csv`](data/session_schedule.csv)).
+4. The browser downloads CSVs and videos after each run. Move the videos to the group drive.
 
-Data file names come from the sim: `ParticipantID_Session_Dashboard_Trial_YYYYMMDD_kind.csv`, for example `P001_S1_Nimbus_Trial1_20261112_summary.csv`. Don't rename them.
+## Uploading data
 
-## Analyzing the data
+**With an AI agent:** open the repo in Claude Code and say *"upload my session data from Downloads"*, or run `/upload-session-data`. The agent follows [`CLAUDE.md`](CLAUDE.md). Other agents read [`AGENTS.md`](AGENTS.md).
 
-**Workbook (main path):** on the sim's setup screen, click **Export results workbook**. Add the heart rates in the `3_HeartRate` tab, then save the file into `results/`. The `5_Stats` tab has the paired t-tests.
-
-The sim stores results in that computer's browser. If sessions ran on several computers, use **Add CSV files from another computer…** to bring the summary and survey CSVs from `data/raw/` onto one machine before exporting.
-
-**Python (cross-check):** `analyze.py` reads every CSV in `data/raw/` and computes the same 11 measures as `5_Stats`. It also runs a Trial 1 vs. Trial 2 learning-effect check and computes group means.
+**By hand:**
 
 ```bash
-pip install -r requirements.txt
+python tools/ingest.py add ~/Downloads
 ```
 
 ```bash
-python analysis/analyze.py
+python tools/ingest.py hr P003 --apple-health ~/Downloads/export.zip
 ```
 
-Results are written to `results/` as `.csv` and `.md` tables; the Markdown tables paste straight into the report.
+```bash
+python tools/ingest.py status
+```
 
-## Working together
+```bash
+git add data/raw && git commit -m "Add P003 session data" && git pull --rebase && git push
+```
 
-1. Clone once: `git clone https://github.com/benedettocr-creator/ENGR321-Drone-Dashboard-Study.git`
-2. Before you start: `git pull`
-3. Add your files, check `git status` (no videos, names, or consent forms), then `git add`, `git commit -m "Add P003 session data"`, and `git push`.
-4. For changes to `simulation/` or `analysis/`, use a branch and pull request so someone else checks it first. Data uploads can go straight to `main`.
+`add` copies only valid simulator CSVs into `data/raw/<ParticipantID>/` and leaves out videos and health exports. `hr` works out mean heart rate for the baseline and both flights from the Apple Health export, using the sim's start and end times. You can also type the values in with `--baseline 72 --nimbus 88 --aerodash 95`. `status` lists what each participant is still missing.
 
-New to git? [GitHub Desktop](https://desktop.github.com/) does all of this with buttons.
+## The report
+
+- [`report/REPORT.md`](report/REPORT.md) is **generated**, in IEEE conference structure. Don't edit it.
+- To change the text, edit [`report/template.md`](report/template.md); numbers, tables, and figures fill in from `{{placeholders}}`.
+- Preview locally with `python tools/build_report.py`, which writes to `build/`.
+- The stats are two-tailed paired t-tests (Nimbus minus AeroDash), the same as the `5_Stats` tab of [`analysis/Project2_Analysis_Workbook.xlsx`](analysis/Project2_Analysis_Workbook.xlsx). The sim's **Export results workbook** button still works as a cross-check.
+
+## What's where
+
+| Path | Contents |
+| --- | --- |
+| [`simulation/`](simulation/) | `drone_sim.html`, the simulator (one offline file) |
+| [`data/raw/`](data/raw/) | One folder per participant: sim CSVs plus `<PID>_heart_rate.csv`. See [`data/README.md`](data/README.md) |
+| [`analysis/`](analysis/) | Course workbook template and `analyze.py` |
+| [`tools/`](tools/) | `ingest.py` (upload and checks) and `build_report.py` |
+| [`report/`](report/) | `template.md` (edit this) and the generated `REPORT.md`, `figures/`, `results/` |
+| [`CLAUDE.md`](CLAUDE.md), [`.claude/skills/`](.claude/skills/) | Instructions for teammates' AI agents |
+
+Changes to `simulation/`, `analysis/`, or `tools/` should go through a pull request so someone checks them; GitHub Actions runs the same checks on pull requests.
 
 ## Related
 

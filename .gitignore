@@ -38,3 +38,6 @@ venv/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Local report previews (python tools/build_report.py); CI publishes to report/
+build/
