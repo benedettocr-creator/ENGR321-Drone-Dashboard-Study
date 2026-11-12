@@ -24,7 +24,9 @@
   /* Overlays */
   .overlay { position: fixed; inset: 0; z-index: 50; display: none; align-items: center; justify-content: center; }
   .overlay.show { display: flex; }
-  #setup, #summary { background: rgba(8,12,18,.96); overflow: auto; padding: 24px; }
+  #setup, #summary { background: rgba(8,12,18,.96); overflow: auto; padding: 24px; align-items: flex-start; }
+  /* margin:auto centers the card when it fits, but never pushes its top off-screen when it is taller than the window */
+  #setup > .card, #summary > .card { margin: auto; }
   .card { width: min(760px, 100%); background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 24px 28px; }
   .card h1 { margin: 0 0 4px; font-size: 22px; }
   .card h2 { margin: 18px 0 8px; font-size: 15px; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; }
