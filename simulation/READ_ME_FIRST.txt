@@ -1,6 +1,11 @@
 ENGR 321 Project 2 - Drone Delivery Simulator
 
-HOW TO OPEN
+FASTEST WAY: OPEN IT ONLINE
+Open this link in Google Chrome on a laptop or desktop (no download needed):
+https://jtmuir06-cpu.github.io/aerodash-app/drone-sim.html
+If it doesn't load, or you have no internet, use the steps below instead.
+
+HOW TO OPEN THE DOWNLOADED FILE
 1. Unzip this folder first (right-click > Extract All on Windows, or double-click on Mac).
 2. Open Google Chrome.
 3. Drag drone_sim.html into the Chrome window (or right-click it > Open with > Google Chrome).
