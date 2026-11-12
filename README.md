@@ -2,6 +2,8 @@
 
 ENGR 321 (Human Factors Engineering) study comparing two drone delivery dashboards, **Nimbus Express** and **AeroDash**. Participants fly a simulated delivery route while the dashboard beside the flight view shows three alerts: low battery, wind warning, and a status check. We measure how fast they notice and act on each alert, how well they fly, their heart rate, and their workload (NASA-TLX) and usability (SUS) ratings.
 
+**🚁 [Open the simulator live in Chrome →](https://jtmuir06-cpu.github.io/aerodash-app/drone-sim.html)** No download needed. Use a laptop or desktop. If the link doesn't load, download [`simulation/drone_sim.html`](simulation/drone_sim.html) and drag it into Chrome instead.
+
 **📄 [Read the current report → report/REPORT.md](report/REPORT.md)**. It rebuilds itself from the data every time someone uploads.
 
 > **This repository is public.** Only coded participant IDs (P001, P002, …) go here. Never commit names, consent forms, face or screen videos, or Apple Health exports. The upload tool and a pre-commit hook block these, but stay careful.
