@@ -34,6 +34,8 @@ The simulator (`simulation/drone_sim.html`) downloads files named `P001_S1_Nimbu
 5. `python tools/ingest.py check` must pass, then `python tools/ingest.py status` shows what each participant still needs.
 6. Commit only `data/raw/<ParticipantID>/...`, with a message like `Add P003 session data`, then `git pull --rebase origin main` and `git push origin main`.
 
+If your user says a session was only a test, add it with `--example` instead: it goes to `data/example/<PID>/` and is never analyzed.
+
 Each participant has their own folder, so several teammates can upload at once without conflicts. If a push is rejected, pull with rebase and push again.
 
 ## The report
@@ -55,6 +57,7 @@ Each participant has their own folder, so several teammates can upload at once w
 | --- | --- | --- |
 | `simulation/` | The simulator, a single offline HTML file | Team, via pull request |
 | `data/raw/<PID>/` | Sim CSVs and `<PID>_heart_rate.csv` | `tools/ingest.py` only |
+| `data/example/<PID>/` | Test sessions kept as examples, never analyzed | `tools/ingest.py add --example` only |
 | `data/session_schedule.csv` | Counterbalancing plan (matches what the sim assigns) | Team |
 | `analysis/` | Workbook template and `analyze.py` | Team, via pull request |
 | `tools/` | `ingest.py` (upload and checks), `build_report.py` | Team, via pull request |

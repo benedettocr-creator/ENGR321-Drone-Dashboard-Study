@@ -2,6 +2,7 @@
 
     python tools/ingest.py add ~/Downloads              copy sim CSVs into data/raw/<ParticipantID>/
     python tools/ingest.py add ~/Downloads --dry-run    show what would happen, change nothing
+    python tools/ingest.py add <folder> --example       file a test session under data/example/ (never analyzed)
     python tools/ingest.py hr P003 --baseline 72 --nimbus 88 --aerodash 95
     python tools/ingest.py hr P003 --apple-health ~/Downloads/export.zip
     python tools/ingest.py check                        validate data/ (CI and the pre-commit hook run this)
@@ -26,6 +27,7 @@ from xml.etree import ElementTree
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 RAW = DATA / "raw"
+EXAMPLE = DATA / "example"  # test sessions kept as a worked example; never analyzed
 
 # Column layouts written by simulation/drone_sim.html. A file with any other header is refused.
 HEADERS = {
@@ -44,6 +46,10 @@ HEADERS = {
               + [f"SUS_Q{i}" for i in range(1, 11)] + ["SUS_score"],
     "heart_rate": ["participant_id", "window", "mean_hr_bpm", "n_samples", "start_utc", "end_utc", "source"],
 }
+# Newer copies of the simulator add these columns to the end of the summary CSV. Both layouts are accepted.
+SUMMARY_EXTRA = ["PackageDropTime_s", "DropAttemptsOutsideZone", "ActualEventOrder", "MinAlertGap_s"]
+LAYOUTS = {kind: [cols] for kind, cols in HEADERS.items()}
+LAYOUTS["summary"].append(HEADERS["summary"] + SUMMARY_EXTRA)
 GROUPS = {"ENGR 321 classmate", "CS major / esports club", "Other major"}
 HR_WINDOWS = ("baseline", "Nimbus", "AeroDash")
 
@@ -88,7 +94,7 @@ def validate(path, meta):
         return ["empty file"]
     kind = meta["kind"]
     header, body = rows[0], rows[1:]
-    if header != HEADERS[kind]:
+    if header not in LAYOUTS[kind]:
         return [f"columns don't match the simulator's {kind} layout"]
     problems = []
     col = {name: i for i, name in enumerate(header)}
@@ -135,8 +141,9 @@ def candidates(paths):
 def cmd_add(args):
     added = same = 0
     refused, held_back = [], 0
+    root = EXAMPLE if args.example else RAW
     for src in candidates(args.paths):
-        if RAW in src.resolve().parents:
+        if root in src.resolve().parents:
             continue
         name = BROWSER_COPY.sub("", src.name)
         if src.suffix.lower() in VIDEO_EXT or name in HEALTH_EXPORT or src.parent.name == "apple_health_export":
@@ -152,7 +159,7 @@ def cmd_add(args):
         if problems:
             refused.append(f"{src.name}: " + "; ".join(problems))
             continue
-        dest = RAW / meta["pid"] / name
+        dest = root / meta["pid"] / name
         if dest.exists():
             if filecmp.cmp(src, dest, shallow=False):
                 same += 1
@@ -268,7 +275,7 @@ def cmd_hr(args):
 
 # ---------------------------------------------------------------- check and status
 
-ALLOWED_IN_DATA = {"README.md", "session_schedule.csv", "raw/.gitkeep"}
+ALLOWED_IN_DATA = {"README.md", "session_schedule.csv", "raw/.gitkeep", "example/README.md"}
 
 
 def tracked_files():
@@ -294,7 +301,7 @@ def cmd_check(args):
         if rel in ALLOWED_IN_DATA:
             continue
         meta = parse_name(f.name)
-        if meta is None or f.parent.parent != RAW or f.parent.name != meta["pid"]:
+        if meta is None or f.parent.parent not in (RAW, EXAMPLE) or f.parent.name != meta["pid"]:
             errors.append(f"data/{rel}: not a recognized data file in the right folder")
             continue
         errors += [f"data/{rel}: {p}" for p in validate(f, meta)]
@@ -347,6 +354,8 @@ def main(argv=None):
     p.add_argument("paths", nargs="+", help="files or folders (e.g. ~/Downloads)")
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--replace", action="store_true", help="overwrite a different file with the same name")
+    p.add_argument("--example", action="store_true",
+                   help="file a test session under data/example/ instead (kept as an example, never analyzed)")
     p.set_defaults(func=cmd_add)
     p = sub.add_parser("hr", help="save a participant's mean heart rates")
     p.add_argument("pid")

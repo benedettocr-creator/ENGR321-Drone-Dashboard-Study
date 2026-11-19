@@ -158,8 +158,8 @@ def figure_paired(flights, table, path):
 
 def figure_alerts(flights, path):
     """Fig. 2: reaction time to each alert type by dashboard, mean with 95% CI."""
-    cols = [c for c in analyze.ALERT_RT if c in flights]
-    if not cols:
+    cols = [c for c in analyze.ALERT_RT if c in flights and flights[c].notna().any()]
+    if not cols:  # no alert was acknowledged yet
         return False
     fig, ax = plt.subplots(figsize=(3.5, 2.7))
     top = 0
