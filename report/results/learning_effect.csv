@@ -1,1 +1,2 @@
-
+Measure,Unit,Better,n (pairs),Trial1 mean,Trial1 SD,Trial2 mean,Trial2 SD,Mean diff,SD of diff,t,df,p (two-tailed),Effect size dz,Significant (p < .05)?
+Task time,s,lower,1,258.2,,228.4,,29.799999999999983,,,0,,,no
