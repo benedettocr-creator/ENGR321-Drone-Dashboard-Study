@@ -3,7 +3,7 @@
 [Author 1 Name], [Author 2 Name], [Author 3 Name], [Author 4 Name]
 *ENGR 321: Human Factors Engineering, [Department], [University]* · *Instructor: [Name]*
 
-> **Generated file — do not edit `report/REPORT.md` by hand.** Edit `report/template.md`; the report rebuilds from the data on every push. Numbers in this version: 1 participants, 2 flights, built 2026-11-19 05:21 UTC from commit `29f52c3`.
+> **Generated file — do not edit `report/REPORT.md` by hand.** Edit `report/template.md`; the report rebuilds from the data on every push. Numbers in this version: 1 participants, 2 flights, built 2026-11-19 15:59 UTC from commit `273fd54`.
 
 **_Abstract_—This study compared two drone delivery dashboards, Nimbus Express and AeroDash, to see how each one's design affects how quickly operators notice and act on alerts, how well they fly, and how stressed and loaded they feel. In a within-subject study, 1 participants flew a simulated delivery route once with each dashboard while three alerts appeared on the dashboard only: low battery, a wind warning, and a status check. No measure differed significantly between the dashboards at α = .05. [TO COMPLETE: one sentence on the main design recommendation.]**
 
@@ -90,21 +90,23 @@ Each measure was compared between dashboards with a two-tailed paired t-test (α
 
 **TABLE I.** Paired Comparison, Nimbus Express vs. AeroDash, Mean (SD)
 
-| Measure                                        | n   | Nimbus Express   | AeroDash   | Diff   | t(df)   | p   | d_z   |
-|:-----------------------------------------------|:----|:-----------------|:-----------|:-------|:--------|:----|:------|
-| Missed alerts (count, lower is better)         | 1   | 3.00 (—)         | 1.00 (—)   | 2.00   | —       | —   | —     |
-| Gates passed (of 15) (count, higher is better) | 1   | 15.00 (—)        | 9.00 (—)   | 6.00   | —       | —   | —     |
-| Collisions (count, lower is better)            | 1   | 0.00 (—)         | 0.00 (—)   | 0.00   | —       | —   | —     |
-| Path deviation (m, lower is better)            | 1   | 2.30 (—)         | 1.00 (—)   | 1.30   | —       | —   | —     |
-| Task time (s, lower is better)                 | 1   | 198.30 (—)       | 134.90 (—) | 63.40  | —       | —   | —     |
-| NASA-TLX (raw) (0-100, lower is better)        | 1   | 20.83 (—)        | 34.17 (—)  | -13.34 | —       | —   | —     |
-| SUS score (0-100, higher is better)            | 1   | 47.50 (—)        | 52.50 (—)  | -5.00  | —       | —   | —     |
+| Measure                                            | n   | Nimbus Express   | AeroDash   | Diff   | t(df)   | p   | d_z   |
+|:---------------------------------------------------|:----|:-----------------|:-----------|:-------|:--------|:----|:------|
+| Missed alerts (count, lower is better)             | 1   | 3.00 (—)         | 1.00 (—)   | 2.00   | —       | —   | —     |
+| Gates passed (of 15) (count, higher is better)     | 1   | 15.00 (—)        | 9.00 (—)   | 6.00   | —       | —   | —     |
+| Collisions (count, lower is better)                | 1   | 0.00 (—)         | 0.00 (—)   | 0.00   | —       | —   | —     |
+| Path deviation (m, lower is better)                | 1   | 2.30 (—)         | 1.00 (—)   | 1.30   | —       | —   | —     |
+| Task time (s, lower is better)                     | 1   | 198.30 (—)       | 134.90 (—) | 63.40  | —       | —   | —     |
+| Heart rate change from rest (bpm, lower is better) | 1   | 6.00 (—)         | 4.00 (—)   | 2.00   | —       | —   | —     |
+| NASA-TLX (raw) (0-100, lower is better)            | 1   | 20.83 (—)        | 34.17 (—)  | -13.34 | —       | —   | —     |
+| SUS score (0-100, higher is better)                | 1   | 47.50 (—)        | 52.50 (—)  | -5.00  | —       | —   | —     |
 
 - **Missed alerts:** not enough paired data for a test yet (n = 1).
 - **Gates passed (of 15):** not enough paired data for a test yet (n = 1).
 - **Collisions:** not enough paired data for a test yet (n = 1).
 - **Path deviation:** not enough paired data for a test yet (n = 1).
 - **Task time:** not enough paired data for a test yet (n = 1).
+- **Heart rate change from rest:** not enough paired data for a test yet (n = 1).
 - **NASA-TLX (raw):** not enough paired data for a test yet (n = 1).
 - **SUS score:** not enough paired data for a test yet (n = 1).
 
@@ -157,7 +159,7 @@ Each trial needs four files (summary, survey, events, telemetry).
 
 | Participant   | Baseline   | Trial1      | Trial2        | Heart rate   | Complete   |
 |:--------------|:-----------|:------------|:--------------|:-------------|:-----------|
-| P001          | no         | Nimbus: 4/4 | AeroDash: 4/4 | no           | no         |
+| P001          | no         | Nimbus: 4/4 | AeroDash: 4/4 | yes          | no         |
 
 ## ACKNOWLEDGMENT
 
