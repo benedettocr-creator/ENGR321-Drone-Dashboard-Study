@@ -15,9 +15,15 @@ Add files with `python tools/ingest.py` (see the main README), never by hand. `p
 | `*_survey.csv` | survey | NASA-TLX subscales (0–100) and raw score; SUS answers (1–5) and score (0–100) |
 | `<PID>_heart_rate.csv` | window | Mean heart rate for `baseline`, `Nimbus`, and `AeroDash`, from `ingest.py hr` |
 
+Newer copies of the simulator add four columns to the end of the summary CSV: `PackageDropTime_s`, `DropAttemptsOutsideZone`, `ActualEventOrder`, and `MinAlertGap_s`. Both layouts are accepted, and the analysis doesn't use the extra columns yet.
+
 `Dashboard` is `Nimbus` or `AeroDash`. `Trial` is `Practice`, `Trial1`, or `Trial2`; practice runs are ignored in analysis. `Wind_Onset_s = not_triggered` means the participant never climbed above 31 m, so the wind alert never appeared.
 
 Heart-rate windows run from `baseline_start` to `baseline_end`, and from `trial_start` to `trial_end`, in each events CSV (`iso_time`, UTC). The watch, phone, and simulator PC must all set their clocks automatically.
+
+## `example/`
+
+Test sessions kept as a worked example, filed with `python tools/ingest.py add <folder> --example`. They pass the same checks but are never analyzed. See [`example/README.md`](example/README.md).
 
 ## `session_schedule.csv`
 
