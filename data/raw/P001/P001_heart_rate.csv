@@ -1,0 +1,4 @@
+participant_id,window,mean_hr_bpm,n_samples,start_utc,end_utc,source
+P001,baseline,66.0,,,,typed_in
+P001,Nimbus,72.0,,,,typed_in
+P001,AeroDash,70.0,,,,typed_in
