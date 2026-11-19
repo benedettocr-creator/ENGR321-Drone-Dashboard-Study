@@ -3,7 +3,7 @@
 [Author 1 Name], [Author 2 Name], [Author 3 Name], [Author 4 Name]
 *ENGR 321: Human Factors Engineering, [Department], [University]* · *Instructor: [Name]*
 
-> **Generated file — do not edit `report/REPORT.md` by hand.** Edit `report/template.md`; the report rebuilds from the data on every push. Numbers in this version: 1 participants, 2 flights, built 2026-11-19 04:42 UTC from commit `3be961d`.
+> **Generated file — do not edit `report/REPORT.md` by hand.** Edit `report/template.md`; the report rebuilds from the data on every push. Numbers in this version: 1 participants, 2 flights, built 2026-11-19 05:21 UTC from commit `29f52c3`.
 
 **_Abstract_—This study compared two drone delivery dashboards, Nimbus Express and AeroDash, to see how each one's design affects how quickly operators notice and act on alerts, how well they fly, and how stressed and loaded they feel. In a within-subject study, 1 participants flew a simulated delivery route once with each dashboard while three alerts appeared on the dashboard only: low battery, a wind warning, and a status check. No measure differed significantly between the dashboards at α = .05. [TO COMPLETE: one sentence on the main design recommendation.]**
 
@@ -84,33 +84,27 @@ Each measure was compared between dashboards with a two-tailed paired t-test (α
 
 ## IV. RESULTS
 
-1 participants completed 2 trials (sessions on Nov 17, 2026). Data completeness is in Appendix B.
+1 participants completed 2 trials (sessions Nov 18 to Nov 19, 2026). Data completeness is in Appendix B.
 
 ### A. Dashboard Comparison
 
 **TABLE I.** Paired Comparison, Nimbus Express vs. AeroDash, Mean (SD)
 
-| Measure                                            | n   | Nimbus Express   | AeroDash   | Diff   | t(df)   | p   | d_z   |
-|:---------------------------------------------------|:----|:-----------------|:-----------|:-------|:--------|:----|:------|
-| Low-battery time to charge (s, lower is better)    | 1   | 22.84 (—)        | 34.28 (—)  | -11.44 | —       | —   | —     |
-| Wind time to descend (s, lower is better)          | 1   | 3.32 (—)         | 3.31 (—)   | 0.01   | —       | —   | —     |
-| Missed alerts (count, lower is better)             | 1   | 3.00 (—)         | 2.00 (—)   | 1.00   | —       | —   | —     |
-| Gates passed (of 15) (count, higher is better)     | 1   | 15.00 (—)        | 15.00 (—)  | 0.00   | —       | —   | —     |
-| Collisions (count, lower is better)                | 1   | 0.00 (—)         | 0.00 (—)   | 0.00   | —       | —   | —     |
-| Path deviation (m, lower is better)                | 1   | 7.70 (—)         | 2.60 (—)   | 5.10   | —       | —   | —     |
-| Task time (s, lower is better)                     | 1   | 258.20 (—)       | 228.40 (—) | 29.80  | —       | —   | —     |
-| Heart rate change from rest (bpm, lower is better) | 1   | -7.00 (—)        | -5.00 (—)  | -2.00  | —       | —   | —     |
-| NASA-TLX (raw) (0-100, lower is better)            | 1   | 20.83 (—)        | 8.33 (—)   | 12.50  | —       | —   | —     |
-| SUS score (0-100, higher is better)                | 1   | 65.00 (—)        | 60.00 (—)  | 5.00   | —       | —   | —     |
+| Measure                                        | n   | Nimbus Express   | AeroDash   | Diff   | t(df)   | p   | d_z   |
+|:-----------------------------------------------|:----|:-----------------|:-----------|:-------|:--------|:----|:------|
+| Missed alerts (count, lower is better)         | 1   | 3.00 (—)         | 1.00 (—)   | 2.00   | —       | —   | —     |
+| Gates passed (of 15) (count, higher is better) | 1   | 15.00 (—)        | 9.00 (—)   | 6.00   | —       | —   | —     |
+| Collisions (count, lower is better)            | 1   | 0.00 (—)         | 0.00 (—)   | 0.00   | —       | —   | —     |
+| Path deviation (m, lower is better)            | 1   | 2.30 (—)         | 1.00 (—)   | 1.30   | —       | —   | —     |
+| Task time (s, lower is better)                 | 1   | 198.30 (—)       | 134.90 (—) | 63.40  | —       | —   | —     |
+| NASA-TLX (raw) (0-100, lower is better)        | 1   | 20.83 (—)        | 34.17 (—)  | -13.34 | —       | —   | —     |
+| SUS score (0-100, higher is better)            | 1   | 47.50 (—)        | 52.50 (—)  | -5.00  | —       | —   | —     |
 
-- **Low-battery time to charge:** not enough paired data for a test yet (n = 1).
-- **Wind time to descend:** not enough paired data for a test yet (n = 1).
 - **Missed alerts:** not enough paired data for a test yet (n = 1).
 - **Gates passed (of 15):** not enough paired data for a test yet (n = 1).
 - **Collisions:** not enough paired data for a test yet (n = 1).
 - **Path deviation:** not enough paired data for a test yet (n = 1).
 - **Task time:** not enough paired data for a test yet (n = 1).
-- **Heart rate change from rest:** not enough paired data for a test yet (n = 1).
 - **NASA-TLX (raw):** not enough paired data for a test yet (n = 1).
 - **SUS score:** not enough paired data for a test yet (n = 1).
 
@@ -118,9 +112,7 @@ Each measure was compared between dashboards with a two-tailed paired t-test (α
 
 *Fig. 1. Each gray line is one participant; colored points are means with 95% confidence intervals.*
 
-![Fig. 2](figures/fig2_alert_rt.png)
 
-*Fig. 2. Time from alert onset to pressing A, by alert type. Points are means with 95% confidence intervals.*
 
 ### B. Learning-Effect Check
 
@@ -128,7 +120,7 @@ Each measure was compared between dashboards with a two-tailed paired t-test (α
 
 | Measure                        | n   | Trial 1    | Trial 2    | Diff   | t(df)   | p   | d_z   |
 |:-------------------------------|:----|:-----------|:-----------|:-------|:--------|:----|:------|
-| Task time (s, lower is better) | 1   | 258.20 (—) | 228.40 (—) | 29.80  | —       | —   | —     |
+| Task time (s, lower is better) | 1   | 198.30 (—) | 134.90 (—) | 63.40  | —       | —   | —     |
 
 ### C. Participant Groups
 
@@ -136,8 +128,8 @@ Each measure was compared between dashboards with a two-tailed paired t-test (α
 
 | Group              | Dashboard      |   Flights |   Alert RT (s) |   Gates passed |   Collisions |   Path deviation (m) |   Task time (s) |
 |:-------------------|:---------------|----------:|---------------:|---------------:|-------------:|---------------------:|----------------:|
-| ENGR 321 classmate | AeroDash       |         1 |          12.12 |             15 |            0 |                  2.6 |           228.4 |
-| ENGR 321 classmate | Nimbus Express |         1 |         nan    |             15 |            0 |                  7.7 |           258.2 |
+| ENGR 321 classmate | AeroDash       |         1 |            nan |              9 |            0 |                  1   |           134.9 |
+| ENGR 321 classmate | Nimbus Express |         1 |            nan |             15 |            0 |                  2.3 |           198.3 |
 
 ## V. DISCUSSION
 
@@ -165,7 +157,7 @@ Each trial needs four files (summary, survey, events, telemetry).
 
 | Participant   | Baseline   | Trial1      | Trial2        | Heart rate   | Complete   |
 |:--------------|:-----------|:------------|:--------------|:-------------|:-----------|
-| P001          | yes        | Nimbus: 2/4 | AeroDash: 2/4 | yes          | no         |
+| P001          | no         | Nimbus: 4/4 | AeroDash: 4/4 | no           | no         |
 
 ## ACKNOWLEDGMENT
 
