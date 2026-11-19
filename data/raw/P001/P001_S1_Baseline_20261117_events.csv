@@ -1,0 +1,9 @@
+participant_id,session,dashboard,trial,epoch_ms,iso_time,trial_time_s,event,detail,x_m,z_m,alt_m,battery_pct,alert_area_px
+P001,S1,None,Baseline,1794933587190,2026-11-17T16:39:47.189Z,0.000,recording_start,screen;video/webm;codecs=vp9,0.00,0.00,0.00,100.0,
+P001,S1,None,Baseline,1794933587190,2026-11-17T16:39:47.190Z,0.000,recording_start,face;video/webm;codecs=vp9,0.00,0.00,0.00,100.0,
+P001,S1,None,Baseline,1794933587190,2026-11-17T16:39:47.190Z,0.000,sync_flash_start,white screen 1.0 s,0.00,0.00,0.00,100.0,
+P001,S1,None,Baseline,1794933588194,2026-11-17T16:39:48.193Z,0.000,baseline_start,180 s seated rest,0.00,0.00,0.00,100.0,
+P001,S1,None,Baseline,1794933768195,2026-11-17T16:42:48.195Z,180.001,baseline_end,completed,0.00,0.00,0.00,100.0,
+P001,S1,None,Baseline,1794933768195,2026-11-17T16:42:48.195Z,180.001,sync_flash_end,white screen 1.0 s,0.00,0.00,0.00,100.0,
+P001,S1,None,Baseline,1794933769706,2026-11-17T16:42:49.705Z,180.001,recording_stop,screen,0.00,0.00,0.00,100.0,
+P001,S1,None,Baseline,1794933769707,2026-11-17T16:42:49.707Z,180.001,recording_stop,face,0.00,0.00,0.00,100.0,

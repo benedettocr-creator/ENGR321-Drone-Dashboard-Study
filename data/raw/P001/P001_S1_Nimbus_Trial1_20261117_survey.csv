@@ -1,0 +1,2 @@
+ParticipantID,Session,Group,Dashboard,Trial,Date,TLX_Mental,TLX_Physical,TLX_Temporal,TLX_Performance,TLX_Effort,TLX_Frustration,NASA_TLX_raw,SUS_Q1,SUS_Q2,SUS_Q3,SUS_Q4,SUS_Q5,SUS_Q6,SUS_Q7,SUS_Q8,SUS_Q9,SUS_Q10,SUS_score
+P001,S1,ENGR 321 classmate,Nimbus,Trial1,20261117,10,0,15,20,15,65,20.83,3,4,4,1,2,2,5,3,4,2,65
