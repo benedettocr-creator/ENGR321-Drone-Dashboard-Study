@@ -1,0 +1,2 @@
+ParticipantID,Session,Group,Dashboard,Trial,Date,TLX_Mental,TLX_Physical,TLX_Temporal,TLX_Performance,TLX_Effort,TLX_Frustration,NASA_TLX_raw,SUS_Q1,SUS_Q2,SUS_Q3,SUS_Q4,SUS_Q5,SUS_Q6,SUS_Q7,SUS_Q8,SUS_Q9,SUS_Q10,SUS_score
+P003,S1,Other major,Nimbus,Trial1,20261122,70,5,70,90,70,60,60.83,2,2,3,2,4,1,5,2,3,4,65

@@ -1,0 +1,22 @@
+participant_id,session,dashboard,trial,epoch_ms,iso_time,trial_time_s,event,detail,x_m,z_m,alt_m,battery_pct,alert_area_px
+P003,S1,Nimbus,Trial1,1795393425371,2026-11-23T00:23:45.371Z,0.000,recording_start,screen;video/webm;codecs=vp9,0.00,0.00,0.00,100.0,
+P003,S1,Nimbus,Trial1,1795393425371,2026-11-23T00:23:45.371Z,0.000,recording_start,face;video/webm;codecs=vp9,0.00,0.00,0.00,100.0,
+P003,S1,Nimbus,Trial1,1795393425371,2026-11-23T00:23:45.371Z,0.000,sync_flash_start,white screen 1.0 s,0.00,0.00,0.00,100.0,
+P003,S1,Nimbus,Trial1,1795393429891,2026-11-23T00:23:49.891Z,0.000,trial_start,group=Other major;route=A;order=2-3-1;planned_s=wind_warning@39|status_check@105|low_battery@121;wind_fires_when_above_31m;gates=15,0.00,0.00,0.00,100.0,
+P003,S1,Nimbus,Trial1,1795393450729,2026-11-23T00:24:10.729Z,20.837,gate_passed,gate_1,1.33,-103.09,17.45,98.3,
+P003,S1,Nimbus,Trial1,1795393461617,2026-11-23T00:24:21.616Z,31.724,gate_passed,gate_2,-1.13,-233.12,17.45,97.5,
+P003,S1,Nimbus,Trial1,1795393468896,2026-11-23T00:24:28.896Z,39.004,wind_armed,fires when altitude > 31 m,-2.64,-306.31,19.86,96.9,
+P003,S1,Nimbus,Trial1,1795393495474,2026-11-23T00:24:55.474Z,65.581,drop_attempt_outside_zone,not_landed,117.76,-441.74,23.69,94.8,
+P003,S1,Nimbus,Trial1,1795393506462,2026-11-23T00:25:06.461Z,76.568,alert_onset,wind_warning,117.78,-441.77,31.04,93.9,999;543;521;303
+P003,S1,Nimbus,Trial1,1795393521470,2026-11-23T00:25:21.469Z,91.577,alert_missed,wind_warning,99.02,-406.77,35.90,92.7,
+P003,S1,Nimbus,Trial1,1795393534901,2026-11-23T00:25:34.900Z,105.007,alert_onset,status_check,81.50,-257.29,36.35,91.6,999;543;521;303
+P003,S1,Nimbus,Trial1,1795393546485,2026-11-23T00:25:46.485Z,116.576,wind_warning_end,not_complied,53.67,-130.57,35.66,90.7,
+P003,S1,Nimbus,Trial1,1795393549925,2026-11-23T00:25:49.925Z,120.016,alert_missed,status_check,35.69,-107.35,35.66,90.4,
+P003,S1,Nimbus,Trial1,1795393550923,2026-11-23T00:25:50.922Z,121.014,alert_onset,low_battery,27.99,-98.90,35.92,22.0,999;543;521;303
+P003,S1,Nimbus,Trial1,1795393565931,2026-11-23T00:26:05.931Z,136.023,alert_missed,low_battery,17.07,-10.96,67.60,16.7,
+P003,S1,Nimbus,Trial1,1795393600022,2026-11-23T00:26:40.021Z,170.113,gate_passed,gate_3,124.98,-235.77,18.29,4.8,
+P003,S1,Nimbus,Trial1,1795393613768,2026-11-23T00:26:53.768Z,183.859,trial_end,battery_depleted,237.67,-241.25,18.12,0.0,
+P003,S1,Nimbus,Trial1,1795393613768,2026-11-23T00:26:53.768Z,183.859,sync_flash_end,white screen 1.0 s,237.67,-241.25,18.12,0.0,
+P003,S1,Nimbus,Trial1,1795393615295,2026-11-23T00:26:55.294Z,183.859,recording_stop,screen,237.67,-241.25,18.12,0.0,
+P003,S1,Nimbus,Trial1,1795393615302,2026-11-23T00:26:55.302Z,183.859,recording_stop,face,237.67,-241.25,18.12,0.0,
+P003,S1,Nimbus,Trial1,1795393819847,2026-11-23T00:30:19.847Z,183.859,survey_submitted,NASA_TLX_raw=60.83;SUS=65,237.67,-241.25,18.12,0.0,
