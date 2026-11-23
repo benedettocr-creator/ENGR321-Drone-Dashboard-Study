@@ -1,0 +1,27 @@
+participant_id,session,dashboard,trial,epoch_ms,iso_time,trial_time_s,event,detail,x_m,z_m,alt_m,battery_pct,alert_area_px
+P004,S1,AeroDash,Trial1,1795396452829,2026-11-23T01:14:12.828Z,0.000,recording_start,screen;video/webm;codecs=vp9,0.00,0.00,0.00,100.0,
+P004,S1,AeroDash,Trial1,1795396452829,2026-11-23T01:14:12.829Z,0.000,recording_start,face;video/webm;codecs=vp9,0.00,0.00,0.00,100.0,
+P004,S1,AeroDash,Trial1,1795396452829,2026-11-23T01:14:12.829Z,0.000,sync_flash_start,white screen 1.0 s,0.00,0.00,0.00,100.0,
+P004,S1,AeroDash,Trial1,1795396457359,2026-11-23T01:14:17.359Z,0.000,trial_start,group=Other major;route=A;order=2-3-1;planned_s=wind_warning@39|status_check@105|low_battery@62;wind_fires_when_above_31m;gates=15,0.00,0.00,0.00,100.0,
+P004,S1,AeroDash,Trial1,1795396466530,2026-11-23T01:14:26.529Z,9.169,gate_passed,gate_1,0.45,-103.06,12.55,99.3,
+P004,S1,AeroDash,Trial1,1795396477350,2026-11-23T01:14:37.350Z,19.990,gate_passed,gate_2,-0.82,-232.73,14.13,98.4,
+P004,S1,AeroDash,Trial1,1795396494154,2026-11-23T01:14:54.154Z,36.794,gate_passed,gate_3,123.72,-242.44,18.28,97.1,
+P004,S1,AeroDash,Trial1,1795396496365,2026-11-23T01:14:56.365Z,39.005,wind_armed,fires when altitude > 31 m,140.44,-240.04,26.56,96.9,
+P004,S1,AeroDash,Trial1,1795396497263,2026-11-23T01:14:57.263Z,39.902,alert_onset,wind_warning,149.69,-238.72,31.04,96.8,999;337;521;508
+P004,S1,AeroDash,Trial1,1795396504393,2026-11-23T01:15:04.393Z,47.033,wind_complied,rt_s=7.131,236.24,-239.56,29.93,96.2,
+P004,S1,AeroDash,Trial1,1795396506670,2026-11-23T01:15:06.670Z,49.310,gate_passed,gate_4,263.73,-238.46,18.50,96.1,
+P004,S1,AeroDash,Trial1,1795396512276,2026-11-23T01:15:12.275Z,54.911,alert_missed,wind_warning,330.57,-239.62,16.77,95.6,
+P004,S1,AeroDash,Trial1,1795396517441,2026-11-23T01:15:17.440Z,60.080,gate_passed,gate_5,392.74,-239.88,16.71,95.2,
+P004,S1,AeroDash,Trial1,1795396519369,2026-11-23T01:15:19.369Z,62.008,alert_onset,low_battery,412.27,-245.81,16.71,22.0,999;337;521;508
+P004,S1,AeroDash,Trial1,1795396530322,2026-11-23T01:15:30.322Z,72.962,gate_passed,gate_6,402.59,-373.22,16.71,18.2,
+P004,S1,AeroDash,Trial1,1795396534378,2026-11-23T01:15:34.377Z,77.017,alert_missed,low_battery,407.58,-421.59,33.95,16.7,
+P004,S1,AeroDash,Trial1,1795396537270,2026-11-23T01:15:37.270Z,79.910,wind_warning_end,complied,410.88,-455.93,40.14,15.7,
+P004,S1,AeroDash,Trial1,1795396545431,2026-11-23T01:15:45.431Z,88.071,gate_passed,gate_7,400.05,-553.33,18.40,12.9,
+P004,S1,AeroDash,Trial1,1795396562369,2026-11-23T01:16:02.368Z,105.008,alert_onset,status_check,519.33,-559.08,0.00,7.0,999;337;521;508
+P004,S1,AeroDash,Trial1,1795396562639,2026-11-23T01:16:02.638Z,105.274,package_delivered,dropped_in_zone,519.33,-559.08,0.00,6.9,
+P004,S1,AeroDash,Trial1,1795396577378,2026-11-23T01:16:17.377Z,120.017,alert_missed,status_check,558.03,-455.69,38.72,1.7,
+P004,S1,AeroDash,Trial1,1795396582214,2026-11-23T01:16:22.214Z,124.854,trial_end,battery_depleted,531.78,-408.38,38.73,0.0,
+P004,S1,AeroDash,Trial1,1795396582215,2026-11-23T01:16:22.214Z,124.854,sync_flash_end,white screen 1.0 s,531.78,-408.38,38.73,0.0,
+P004,S1,AeroDash,Trial1,1795396583727,2026-11-23T01:16:23.727Z,124.854,recording_stop,screen,531.78,-408.38,38.73,0.0,
+P004,S1,AeroDash,Trial1,1795396583733,2026-11-23T01:16:23.733Z,124.854,recording_stop,face,531.78,-408.38,38.73,0.0,
+P004,S1,AeroDash,Trial1,1795396682081,2026-11-23T01:18:02.081Z,124.854,survey_submitted,NASA_TLX_raw=24.17;SUS=77.5,531.78,-408.38,38.73,0.0,
